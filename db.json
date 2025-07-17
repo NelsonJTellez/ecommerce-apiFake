@@ -1,0 +1,204 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Camiseta básica",
+      "descripcion": "Camiseta de algodón 100%",
+      "precio": 63960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 2,
+      "nombre": "Vaqueros azul",
+      "descripcion": "Jeans slim fit",
+      "precio": 119960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 3,
+      "nombre": "Chaqueta de cuero sintético",
+      "descripcion": "Chaqueta moderna, estilo urbano",
+      "precio": 199960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 4,
+      "nombre": "Zapatos deportivos",
+      "descripcion": "Zapatillas para correr y entrenar",
+      "precio": 159960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 5,
+      "nombre": "Sudadera con capucha",
+      "descripcion": "Sudadera de felpa interior suave",
+      "precio": 89960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 6,
+      "nombre": "Pantalones cargo",
+      "descripcion": "Pantalones con bolsillos laterales",
+      "precio": 109960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 7,
+      "nombre": "Reloj de pulso",
+      "descripcion": "Reloj digital resistente al agua",
+      "precio": 49960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 8,
+      "nombre": "Mochila escolar",
+      "descripcion": "Mochila con múltiples compartimentos",
+      "precio": 69960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 9,
+      "nombre": "Gorra ajustable",
+      "descripcion": "Gorra de algodón con visera curva",
+      "precio": 39960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 10,
+      "nombre": "Bufanda de lana",
+      "descripcion": "Bufanda tejida para el frío",
+      "precio": 29960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 11,
+      "nombre": "Lentes de sol",
+      "descripcion": "Gafas con protección UV",
+      "precio": 44960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 12,
+      "nombre": "Camisa manga larga",
+      "descripcion": "Camisa formal de algodón",
+      "precio": 85960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 13,
+      "nombre": "Falda plisada",
+      "descripcion": "Falda ligera con diseño clásico",
+      "precio": 65960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 14,
+      "nombre": "Pantaloneta deportiva",
+      "descripcion": "Short de entrenamiento",
+      "precio": 45960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 15,
+      "nombre": "Calcetines deportivos (pack x3)",
+      "descripcion": "Algodón con tecnología dry-fit",
+      "precio": 25960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 16,
+      "nombre": "Correa de cuero",
+      "descripcion": "Correa elegante para hombre",
+      "precio": 54960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 17,
+      "nombre": "Blusa de encaje",
+      "descripcion": "Blusa con detalles florales",
+      "precio": 78960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 18,
+      "nombre": "Zapatos de vestir",
+      "descripcion": "Calzado formal de cuero sintético",
+      "precio": 139960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 19,
+      "nombre": "Pijama de algodón",
+      "descripcion": "Conjunto de dos piezas",
+      "precio": 67960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 20,
+      "nombre": "Traje de baño",
+      "descripcion": "Bañador para piscina o playa",
+      "precio": 59960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 21,
+      "nombre": "Chaleco acolchado",
+      "descripcion": "Ideal para días fríos",
+      "precio": 99960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 22,
+      "nombre": "Medias térmicas",
+      "descripcion": "Perfectas para climas fríos",
+      "precio": 21960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 23,
+      "nombre": "Guantes de invierno",
+      "descripcion": "Guantes de lana y forro polar",
+      "precio": 34960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 24,
+      "nombre": "Sandalias playeras",
+      "descripcion": "Sandalias de goma, cómodas",
+      "precio": 29960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": 25,
+      "nombre": "Camisa hawaiana",
+      "descripcion": "Estampado tropical, liviana",
+      "precio": 74960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    }
+  ]
+}

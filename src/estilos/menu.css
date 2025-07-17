@@ -1,0 +1,193 @@
+:root {
+  --color-fondo: #1863ae;
+  --color-fondo-hover: #236cbd;
+  --color-acento: linear-gradient(87deg, #2997ff 0%, #1073e7 100%);
+  --color-boton: #fff;
+  --color-boton-hover: #e3f3ff;
+  --color-texto: #fff;
+  --color-avatar-borde: #70b3ad;
+  --color-dropdown-bg: #f7fafd;
+  --color-shadow: 0 1px 7px 0 rgba(25,55,87,0.09);
+}
+
+body {
+  margin: 0;
+}
+
+.encabezado {
+  background: var(--color-fondo);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1200;
+  width: 100vw;
+  min-width: 0;
+  box-shadow: var(--color-shadow);
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  transition: background 0.35s, box-shadow 0.2s, backdrop-filter 0.35s;
+}
+
+.encabezado--transparente {
+  background: rgba(24,99,174, 0.7);
+  box-shadow: 0 4px 20px 0 rgba(24,99,174,0.11);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-principal {
+  width: 100vw;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 1.5rem 0.45rem 1rem;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--color-texto);
+  letter-spacing: 0.04em;
+  padding: 0.38rem 1.3rem 0.38rem 0.5rem;
+  border-radius: 7px;
+  background: none;
+  transition: background 0.18s, color 0.13s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo:hover {
+  background: var(--color-fondo-hover);
+  color: #eaf4ff;
+}
+
+.nav-acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-menu {
+  background: var(--color-boton);
+  color: #1763ae;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.09rem;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(66, 165, 245, 0.09);
+  padding: 0.45rem 0.98rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.13s, color 0.14s;
+  margin: 0 0.10rem;
+}
+
+.btn-menu:hover,
+.btn-menu:focus {
+  background: var(--color-boton-hover);
+  color: #1156a5;
+}
+
+.avatar-contenedor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 0.75rem;
+}
+
+#usuario-nombre {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.06em;
+  margin-right: 0.5em;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(23,99,174,0.13), 0 0 1px #000a;
+  align-self: center;
+  transition: color 0.13s;
+  /* Deja display gestionado solo por JS; no lo toques aquí */
+}
+
+.btn-hamburguesa {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.21rem;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  outline: none;
+  transition: background 0.15s;
+}
+
+.btn-hamburguesa:hover,
+.btn-hamburguesa:focus {
+  background: var(--color-fondo-hover);
+}
+
+.hamburguesa-bar {
+  width: 23px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  margin: 1px 0;
+  transition: background 0.10s;
+}
+
+.menu-sesion {
+  position: absolute;
+  right: 0;
+  top: 46px;
+  background-color: var(--color-dropdown-bg, #f7fafd);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem 1.2rem 0.7rem 1.2rem;
+  min-width: 180px;
+  box-shadow: 0 6px 20px rgba(23,99,174,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1201;
+  animation: fadeIn 0.22s;
+}
+
+.menu-sesion .btn-cerrar-sesion {
+  background: none;
+  border: none;
+  color: #e12424;
+  cursor: pointer;
+  font-size: 1.01rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.65rem 0;
+}
+.menu-sesion .btn-cerrar-sesion:hover {
+  color: #b31212;
+}
+.oculto { display: none !important; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px);}
+  to   { opacity: 1; transform: none;}
+}
+
+@media (max-width: 900px) {
+  .nav-principal { padding: 0.44rem 0.5rem; }
+}
+@media (max-width: 700px) {
+  .nav-principal { flex-direction: column; gap: 0.85rem; }
+  .nav-logo { font-size: 1.08rem; }
+}
+@media (max-width: 400px) {
+  .btn-hamburguesa { width: 32px; height: 32px; }
+  .hamburguesa-bar { width: 15px; }
+}
