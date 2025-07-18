@@ -1,7 +1,7 @@
 {
   "productos": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Camiseta básica",
       "descripcion": "Camiseta de algodón 100%",
       "precio": 63960,
@@ -9,7 +9,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Vaqueros azul",
       "descripcion": "Jeans slim fit",
       "precio": 119960,
@@ -17,7 +17,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Chaqueta de cuero sintético",
       "descripcion": "Chaqueta moderna, estilo urbano",
       "precio": 199960,
@@ -25,7 +25,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Zapatos deportivos",
       "descripcion": "Zapatillas para correr y entrenar",
       "precio": 159960,
@@ -33,7 +33,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Sudadera con capucha",
       "descripcion": "Sudadera de felpa interior suave",
       "precio": 89960,
@@ -41,7 +41,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Pantalones cargo",
       "descripcion": "Pantalones con bolsillos laterales",
       "precio": 109960,
@@ -49,7 +49,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 7,
+      "id": "7",
       "nombre": "Reloj de pulso",
       "descripcion": "Reloj digital resistente al agua",
       "precio": 49960,
@@ -57,7 +57,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 8,
+      "id": "8",
       "nombre": "Mochila escolar",
       "descripcion": "Mochila con múltiples compartimentos",
       "precio": 69960,
@@ -65,7 +65,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 9,
+      "id": "9",
       "nombre": "Gorra ajustable",
       "descripcion": "Gorra de algodón con visera curva",
       "precio": 39960,
@@ -73,7 +73,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 10,
+      "id": "10",
       "nombre": "Bufanda de lana",
       "descripcion": "Bufanda tejida para el frío",
       "precio": 29960,
@@ -81,7 +81,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 11,
+      "id": "11",
       "nombre": "Lentes de sol",
       "descripcion": "Gafas con protección UV",
       "precio": 44960,
@@ -89,7 +89,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 12,
+      "id": "12",
       "nombre": "Camisa manga larga",
       "descripcion": "Camisa formal de algodón",
       "precio": 85960,
@@ -97,7 +97,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 13,
+      "id": "13",
       "nombre": "Falda plisada",
       "descripcion": "Falda ligera con diseño clásico",
       "precio": 65960,
@@ -105,7 +105,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 14,
+      "id": "14",
       "nombre": "Pantaloneta deportiva",
       "descripcion": "Short de entrenamiento",
       "precio": 45960,
@@ -113,7 +113,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 15,
+      "id": "15",
       "nombre": "Calcetines deportivos (pack x3)",
       "descripcion": "Algodón con tecnología dry-fit",
       "precio": 25960,
@@ -121,7 +121,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 16,
+      "id": "16",
       "nombre": "Correa de cuero",
       "descripcion": "Correa elegante para hombre",
       "precio": 54960,
@@ -129,7 +129,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 17,
+      "id": "17",
       "nombre": "Blusa de encaje",
       "descripcion": "Blusa con detalles florales",
       "precio": 78960,
@@ -137,7 +137,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 18,
+      "id": "18",
       "nombre": "Zapatos de vestir",
       "descripcion": "Calzado formal de cuero sintético",
       "precio": 139960,
@@ -145,7 +145,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 19,
+      "id": "19",
       "nombre": "Pijama de algodón",
       "descripcion": "Conjunto de dos piezas",
       "precio": 67960,
@@ -153,7 +153,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 20,
+      "id": "20",
       "nombre": "Traje de baño",
       "descripcion": "Bañador para piscina o playa",
       "precio": 59960,
@@ -161,7 +161,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 21,
+      "id": "21",
       "nombre": "Chaleco acolchado",
       "descripcion": "Ideal para días fríos",
       "precio": 99960,
@@ -169,7 +169,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 22,
+      "id": "22",
       "nombre": "Medias térmicas",
       "descripcion": "Perfectas para climas fríos",
       "precio": 21960,
@@ -177,7 +177,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 23,
+      "id": "23",
       "nombre": "Guantes de invierno",
       "descripcion": "Guantes de lana y forro polar",
       "precio": 34960,
@@ -185,7 +185,7 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 24,
+      "id": "24",
       "nombre": "Sandalias playeras",
       "descripcion": "Sandalias de goma, cómodas",
       "precio": 29960,
@@ -193,12 +193,369 @@
       "imagen": "https://placehold.co/120x120"
     },
     {
-      "id": 25,
+      "id": "25",
       "nombre": "Camisa hawaiana",
       "descripcion": "Estampado tropical, liviana",
       "precio": 74960,
       "moneda": "COP",
       "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "26",
+      "nombre": "Polera estampada",
+      "descripcion": "Polera para uso diario",
+      "precio": 65960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "27",
+      "nombre": "Botas impermeables",
+      "descripcion": "Botas para lluvia y nieve",
+      "precio": 159960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "28",
+      "nombre": "Gafas de lectura",
+      "descripcion": "Lentes ligeros estilo moderno",
+      "precio": 49960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "29",
+      "nombre": "Blazer casual",
+      "descripcion": "Blazer para ocasiones semi-formales",
+      "precio": 189960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "30",
+      "nombre": "Pantalón formal",
+      "descripcion": "Pantalón de vestir negro",
+      "precio": 99960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "31",
+      "nombre": "Medias deportivas pack x5",
+      "descripcion": "Media alta transpirables",
+      "precio": 39960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "32",
+      "nombre": "Gorro tejido",
+      "descripcion": "Gorro para clima frío",
+      "precio": 29960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "33",
+      "nombre": "Mochila urbana",
+      "descripcion": "Mochila para diario resistente",
+      "precio": 74960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "34",
+      "nombre": "Camisa slim fit",
+      "descripcion": "Camisa moderna ajustada",
+      "precio": 85960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    },
+    {
+      "id": "35",
+      "nombre": "Jeans grises",
+      "descripcion": "Pantalón clásico color gris",
+      "precio": 119960,
+      "moneda": "COP",
+      "imagen": "https://placehold.co/120x120"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "usuario": "admin",
+      "password": "Admin123*"
+    },
+    {
+      "id": "b635",
+      "usuario": "a",
+      "password": "12345678Aa*"
+    },
+    {
+      "id": "12f6",
+      "usuario": "b",
+      "password": "Bb123456*"
+    }
+  ],
+  "transacciones": [
+    {
+      "id": "6c37",
+      "usuario": "admin",
+      "total": 127920,
+      "items": [
+        {
+          "id": 1,
+          "nombre": "Camiseta básica",
+          "cantidad": 2,
+          "precio": 63960
+        }
+      ],
+      "fecha": "2025-07-18T04:39:25.903Z"
+    },
+    {
+      "id": "f266",
+      "usuario": "admin",
+      "total": 447720,
+      "items": [
+        {
+          "id": 1,
+          "nombre": "Camiseta básica",
+          "cantidad": 7,
+          "precio": 63960
+        }
+      ],
+      "fecha": "2025-07-18T04:39:46.636Z"
+    },
+    {
+      "id": "8267",
+      "usuario": "a",
+      "total": 173920,
+      "items": [
+        {
+          "id": 1,
+          "nombre": "Camiseta básica",
+          "cantidad": 1,
+          "precio": 63960
+        },
+        {
+          "id": 6,
+          "nombre": "Pantalones cargo",
+          "cantidad": 1,
+          "precio": 109960
+        }
+      ],
+      "fecha": "2025-07-18T04:41:45.229Z"
+    },
+    {
+      "id": "b4b5",
+      "usuario": "a",
+      "total": 313840,
+      "items": [
+        {
+          "id": 1,
+          "nombre": "Camiseta básica",
+          "cantidad": 1,
+          "precio": 63960
+        },
+        {
+          "id": 4,
+          "nombre": "Zapatos deportivos",
+          "cantidad": 1,
+          "precio": 159960
+        },
+        {
+          "id": 11,
+          "nombre": "Lentes de sol",
+          "cantidad": 2,
+          "precio": 44960
+        }
+      ],
+      "fecha": "2025-07-18T05:03:24.746Z"
+    },
+    {
+      "id": "61a5",
+      "usuario": "a",
+      "total": 59960,
+      "items": [
+        {
+          "id": 20,
+          "nombre": "Traje de baño",
+          "cantidad": 1,
+          "precio": 59960
+        }
+      ],
+      "fecha": "2025-07-18T05:12:46.374Z"
+    },
+    {
+      "id": "444e",
+      "usuario": "a",
+      "total": 329880,
+      "items": [
+        {
+          "id": 3,
+          "nombre": "Chaqueta de cuero sintético",
+          "cantidad": 1,
+          "precio": 199960
+        },
+        {
+          "id": 5,
+          "nombre": "Sudadera con capucha",
+          "cantidad": 1,
+          "precio": 89960
+        },
+        {
+          "id": 9,
+          "nombre": "Gorra ajustable",
+          "cantidad": 1,
+          "precio": 39960
+        }
+      ],
+      "fecha": "2025-07-18T05:14:18.391Z"
+    },
+    {
+      "id": "1908",
+      "usuario": "a",
+      "total": 187880,
+      "items": [
+        {
+          "id": 19,
+          "nombre": "Pijama de algodón",
+          "cantidad": 1,
+          "precio": 67960
+        },
+        {
+          "id": 20,
+          "nombre": "Traje de baño",
+          "cantidad": 2,
+          "precio": 59960
+        }
+      ],
+      "fecha": "2025-07-18T05:40:31.112Z"
+    },
+    {
+      "id": "690e",
+      "usuario": "a",
+      "total": 89960,
+      "items": [
+        {
+          "id": 5,
+          "nombre": "Sudadera con capucha",
+          "cantidad": 1,
+          "precio": 89960
+        }
+      ],
+      "fecha": "2025-07-18T05:44:31.415Z"
+    },
+    {
+      "id": "c21d",
+      "usuario": "a",
+      "total": 639600,
+      "items": [
+        {
+          "id": 1,
+          "nombre": "Camiseta básica",
+          "cantidad": 10,
+          "precio": 63960
+        }
+      ],
+      "fecha": "2025-07-18T05:45:03.905Z"
+    },
+    {
+      "id": "f52c",
+      "usuario": "a",
+      "total": 224800,
+      "items": [
+        {
+          "id": 11,
+          "nombre": "Lentes de sol",
+          "cantidad": 5,
+          "precio": 44960
+        }
+      ],
+      "fecha": "2025-07-18T15:34:14.221Z"
+    },
+    {
+      "id": "6185",
+      "usuario": "b",
+      "total": 249920,
+      "items": [
+        {
+          "id": "4",
+          "nombre": "Zapatos deportivos",
+          "cantidad": 1,
+          "precio": 159960
+        },
+        {
+          "id": "5",
+          "nombre": "Sudadera con capucha",
+          "cantidad": 1,
+          "precio": 89960
+        }
+      ],
+      "fecha": "2025-07-18T15:47:40.508Z"
+    },
+    {
+      "id": "e213",
+      "usuario": "b",
+      "total": 63960,
+      "items": [
+        {
+          "id": "1",
+          "nombre": "Camiseta básica",
+          "cantidad": 1,
+          "precio": 63960
+        }
+      ],
+      "fecha": "2025-07-18T15:48:36.337Z"
+    },
+    {
+      "id": "76d6",
+      "usuario": "b",
+      "total": 119960,
+      "items": [
+        {
+          "id": "2",
+          "nombre": "Vaqueros azul",
+          "cantidad": 1,
+          "precio": 119960
+        }
+      ],
+      "fecha": "2025-07-18T15:48:53.969Z"
+    },
+    {
+      "id": "83a6",
+      "usuario": "a",
+      "total": 69920,
+      "items": [
+        {
+          "id": "9",
+          "nombre": "Gorra ajustable",
+          "cantidad": 1,
+          "precio": 39960
+        },
+        {
+          "id": "10",
+          "nombre": "Bufanda de lana",
+          "cantidad": 1,
+          "precio": 29960
+        }
+      ],
+      "fecha": "2025-07-18T18:37:52.127Z"
+    },
+    {
+      "id": "0544",
+      "usuario": "a",
+      "total": 499600,
+      "items": [
+        {
+          "id": "28",
+          "nombre": "Gafas de lectura",
+          "cantidad": 10,
+          "precio": 49960
+        }
+      ],
+      "fecha": "2025-07-18T18:42:42.579Z"
     }
   ]
 }

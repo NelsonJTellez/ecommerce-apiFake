@@ -1,31 +1,50 @@
-// servicios/CarritoServicio.ts
+import { Observable } from "../utils/Observable";
+
 
 export type CarritoItem = { id: number, cantidad: number };
-type Callback = () => void;
 
-export class CarritoServicio {
+function claveStorage(usuario: string | null) {
+  return usuario ? `carrito_${usuario}` : "carrito__anonimo";
+}
+
+export class CarritoServicio extends Observable {
   private items: Record<number, number> = {};
-  private subs: Callback[] = [];
+  private usuario: string | null = localStorage.getItem("usuario") || null;
 
   constructor() {
+    super();
     this.cargar();
-    console.log("[CarritoServicio] Carrito inicial cargado:", this.items);
+    window.addEventListener("storage", (e) => {
+      if (e.key === "usuario") {
+        this.usuario = localStorage.getItem("usuario");
+        this.cargar();
+      }
+    });
+  }
+
+  setUsuario(usuario: string | null) {
+    this.usuario = usuario;
+    this.cargar();
   }
 
   private cargar() {
-    const data = localStorage.getItem("carrito");
+    const clave = claveStorage(this.usuario);
+    const data = localStorage.getItem(clave);
     this.items = data ? JSON.parse(data) : {};
-    console.log("[CarritoServicio] Datos cargados de localStorage:", this.items);
+    this.emitir();
   }
 
   private persistir() {
-    localStorage.setItem("carrito", JSON.stringify(this.items));
-    console.log("[CarritoServicio] Datos persistidos en localStorage:", this.items);
+    const clave = claveStorage(this.usuario);
+    if (Object.keys(this.items).length > 0) {
+      localStorage.setItem(clave, JSON.stringify(this.items));
+    } else {
+      localStorage.removeItem(clave);
+    }
     this.emitir();
   }
 
   get allItems() {
-    // Obten todis los items en forma { [id]: cantidad }
     return { ...this.items };
   }
   get totalCantidad() {
@@ -58,7 +77,6 @@ export class CarritoServicio {
   }
 
   quitar(id: number) {
-    // Obsoleto, usar decrementar
     this.decrementar(id);
   }
 
@@ -69,17 +87,9 @@ export class CarritoServicio {
 
   limpiar() {
     this.items = {};
-    this.persistir();
-  }
-
-  suscribir(fn: Callback)   {
-    this.subs.push(fn);
-  }
-  desuscribir(fn: Callback) {
-    this.subs = this.subs.filter(f => f !== fn);
-  }
-  emitir() {
-    this.subs.forEach(fn => fn());
+    const clave = claveStorage(this.usuario);
+    localStorage.removeItem(clave);
+    this.emitir();
   }
 }
 

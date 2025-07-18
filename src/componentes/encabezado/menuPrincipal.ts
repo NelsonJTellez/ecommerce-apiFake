@@ -4,141 +4,168 @@ import { mostrarModalCarrito } from "../../funcionalidades/carrito/carritoModal"
 import { carritoServicio } from "../../servicios/carritoServicio";
 import "../../estilos/menu.css";
 
+
 function obtenerElementoPorId<T extends HTMLElement>(id: string): T {
-    const elemento = document.getElementById(id);
-    if (!elemento) throw new Error(`Elemento con ID "${id}" no encontrado.`);
-    return elemento as T;
+  const el = document.getElementById(id);
+  if (!el) throw new Error(`Elemento con ID "${id}" no encontrado.`);
+  return el as T;
 }
 
-export function crearMenuPrincipal(): void {
-    if (document.querySelector("header")) return;
+let navLogo: HTMLAnchorElement;
 
-    const encabezado: HTMLElement = document.createElement("header");
-    encabezado.className = "encabezado";
-    encabezado.innerHTML = `
-      <nav class="nav-principal">
-        <a href="#/" class="nav-logo">Inicio</a>
-        <div class="nav-acciones">
-          <button id="btn-carrito" class="btn-menu" title="Ver carrito">
-            🛒 <span id="badge-carrito" class="badge-carrito"></span>
+export function crearMenuPrincipal(): void {
+  if (document.querySelector("header")) return;
+
+  const header = document.createElement("header");
+  header.className = "encabezado";
+  header.innerHTML = `
+    <nav class="nav-principal">
+      <a href="#/" class="nav-logo" id="nav-logo">Inicio</a>
+      <div class="nav-acciones">
+        <button id="btn-carrito" class="btn-menu" title="Ver carrito">
+          🛒 <span id="badge-carrito" class="badge-carrito"></span>
+        </button>
+        <button id="btn-tema" class="btn-menu" title="Cambiar tema">🌙</button>
+        <div class="avatar-contenedor">
+          <span id="usuario-nombre" style="margin-right:0.5em; font-weight:600; display:none"></span>
+          <button id="btn-hamburguesa" class="btn-hamburguesa" aria-label="Abrir menú de usuario"
+            aria-controls="menu-sesion" aria-expanded="false" type="button" tabindex="0" style="display:none">
+            <span class="hamburguesa-bar"></span><span class="hamburguesa-bar"></span><span class="hamburguesa-bar"></span>
           </button>
-          <button id="btn-tema" class="btn-menu" title="Cambiar tema">🌙</button>
-          <div class="avatar-contenedor">
-            <span 
-              id="usuario-nombre" 
-              style="margin-right:0.5em; font-weight:600; display:none"
-            ></span>
-            <button class="btn-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú de usuario" aria-expanded="false">
-              <span class="hamburguesa-bar"></span>
-              <span class="hamburguesa-bar"></span>
-              <span class="hamburguesa-bar"></span>
-            </button>
-            <div id="menu-sesion" class="menu-sesion oculto" role="menu" aria-label="Menú de usuario">
-              <button id="cerrar-sesion" class="btn-cerrar-sesion" role="menuitem">Cerrar sesión</button>
-            </div>
+          <div id="menu-sesion" class="menu-sesion oculto" role="menu" aria-label="Menú de usuario">
+            <button id="menu-transacciones" class="btn-menu" role="menuitem">Transacciones</button>
+            <button id="cerrar-sesion" class="btn-cerrar-sesion" role="menuitem">Cerrar sesión</button>
           </div>
         </div>
-      </nav>
-    `;
-    document.body.prepend(encabezado);
+      </div>
+    </nav>`;
+  document.body.prepend(header);
 
-    const btnCarrito = obtenerElementoPorId<HTMLButtonElement>("btn-carrito");
-    const btnTema = obtenerElementoPorId<HTMLButtonElement>("btn-tema");
-    const btnHamburguesa = obtenerElementoPorId<HTMLButtonElement>("btn-hamburguesa");
-    const menuSesion = obtenerElementoPorId<HTMLDivElement>("menu-sesion");
-    const cerrarSesion = obtenerElementoPorId<HTMLButtonElement>("cerrar-sesion");
-    const usuarioNombre = obtenerElementoPorId<HTMLSpanElement>("usuario-nombre");
-    const badgeCarrito = obtenerElementoPorId<HTMLSpanElement>("badge-carrito");
+  navLogo = obtenerElementoPorId("nav-logo");
+  const btnCarrito = obtenerElementoPorId<HTMLButtonElement>("btn-carrito");
+  const btnTema = obtenerElementoPorId<HTMLButtonElement>("btn-tema");
+  const btnHamburguesa = obtenerElementoPorId<HTMLButtonElement>("btn-hamburguesa");
+  const menuSesion = obtenerElementoPorId<HTMLDivElement>("menu-sesion");
+  const cerrarSesion = obtenerElementoPorId<HTMLButtonElement>("cerrar-sesion");
+  const menuTransacciones = obtenerElementoPorId<HTMLButtonElement>("menu-transacciones");
+  const usuarioNombre = obtenerElementoPorId<HTMLSpanElement>("usuario-nombre");
+  const badgeCarrito = obtenerElementoPorId<HTMLSpanElement>("badge-carrito");
 
-    // Badge reactivo
-    function actualizarBadgeCarrito() {
-        const cantidad = carritoServicio.totalCantidad;
-        badgeCarrito.textContent = cantidad > 0 ? String(cantidad) : "";
-        badgeCarrito.style.opacity = cantidad > 0 ? "1" : "0";
+  carritoServicio.suscribir(() => {
+    const cant = carritoServicio.totalCantidad;
+    badgeCarrito.textContent = cant > 0 ? String(cant) : "";
+    badgeCarrito.style.opacity = cant > 0 ? "1" : "0";
+  });
+
+  function actualizarLogoYSesion(): void {
+    const sesion = Sesion.obtenerInstancia();
+    const auth = sesion.estaAutenticado();
+
+    if (auth) {
+      usuarioNombre.textContent = sesion.obtenerUsuario();
+      usuarioNombre.style.display = "";
+      btnHamburguesa.style.display = "";
+      btnHamburguesa.disabled = false;
+      btnHamburguesa.tabIndex = 0;
+
+      navLogo.textContent = "Inicio";
+      navLogo.href = "#/";
+    } else {
+      usuarioNombre.style.display = "none";
+      btnHamburguesa.style.display = "none";
+      btnHamburguesa.disabled = true;
+      btnHamburguesa.tabIndex = -1;
+
+      navLogo.textContent = "Iniciar sesión";
+      navLogo.href = "#/login";
     }
-    carritoServicio.suscribir(actualizarBadgeCarrito);
-    actualizarBadgeCarrito();
 
-    // Muestra el nombre de usuario a la izquierda de la hamburguesa solo si hay sesión
-    function actualizarMenuSesion(): void {
-        const sesion = Sesion.obtenerInstancia();
-        if (sesion.estaAutenticado()) {
-            const usuario = sesion.obtenerUsuario();
-            usuarioNombre.textContent = usuario;
-            usuarioNombre.style.display = ""; // Mostramos el nombre
-            menuSesion.classList.add("oculto");
-        } else {
-            usuarioNombre.textContent = "";
-            usuarioNombre.style.display = "none"; // Oculta el nombre
-            menuSesion.classList.add("oculto");
-        }
+    // cerrar menú usuario si estaba abierto
+    menuSesion.classList.add("oculto");
+    btnHamburguesa.classList.remove("abierto");
+    btnHamburguesa.setAttribute("aria-expanded", "false");
+  }
+
+  window.addEventListener("hashchange", actualizarLogoYSesion);
+  Sesion.obtenerInstancia().suscribir(actualizarLogoYSesion);
+
+  btnCarrito.addEventListener("click", () => {
+    if (Sesion.obtenerInstancia().estaAutenticado()) {
+      mostrarModalCarrito();
+    } else {
+      location.hash = "#/login";
+    }
+  });
+
+  btnTema.addEventListener("click", () => {
+    const tema = preferenciasUsuario.tema === "claro" ? "oscuro" : "claro";
+    preferenciasUsuario.cambiarTema(tema);
+  });
+
+  btnHamburguesa.addEventListener("click", e => {
+    e.stopPropagation();
+    const expandido = btnHamburguesa.getAttribute("aria-expanded") === "true";
+    btnHamburguesa.setAttribute("aria-expanded", (!expandido).toString());
+    btnHamburguesa.classList.toggle("abierto");
+    menuSesion.classList.toggle("oculto");
+  });
+
+  cerrarSesion.addEventListener("click", () => {
+    Sesion.obtenerInstancia().cerrarSesion();
+    location.hash = "#/login";
+    actualizarLogoYSesion();
+  });
+
+  menuTransacciones.addEventListener("click", () => {
+    location.hash = "#/transacciones";
+    navLogo.textContent = Sesion.obtenerInstancia().estaAutenticado() ? "Inicio" : "Iniciar sesión";
+    navLogo.href = Sesion.obtenerInstancia().estaAutenticado() ? "#/" : "#/login";
+    menuSesion.classList.add("oculto");
+    btnHamburguesa.classList.remove("abierto");
+    btnHamburguesa.setAttribute("aria-expanded", "false");
+  });
+
+  document.addEventListener("click", e => {
+    if (!menuSesion.classList.contains("oculto")) {
+      const t = e.target as Node;
+      if (!btnHamburguesa.contains(t) && !menuSesion.contains(t)) {
+        menuSesion.classList.add("oculto");
+        btnHamburguesa.classList.remove("abierto");
         btnHamburguesa.setAttribute("aria-expanded", "false");
+      }
     }
+  });
 
-    btnCarrito.addEventListener("click", () => {
-        const sesion = Sesion.obtenerInstancia();
-        if (sesion.estaAutenticado()) {
-            mostrarModalCarrito();
-        } else {
-            location.hash = "#/login";
-        }
+  function stickyTransparente(): void {
+    const hdr = document.querySelector("header.encabezado");
+    if (!hdr) return;
+    if (hdr.previousElementSibling?.classList.contains("encabezado-sentinel")) return;
+
+    const sent = document.createElement("div");
+    sent.className = "encabezado-sentinel";
+    Object.assign(sent.style, {
+      position: "absolute", top: "0", width: "1px",
+      height: `${hdr.clientHeight}px`, pointerEvents: "none"
     });
+    hdr.parentElement!.insertBefore(sent, hdr);
 
-    btnTema.addEventListener("click", () => {
-        const nuevoTema: "claro" | "oscuro" = preferenciasUsuario.tema === "claro" ? "oscuro" : "claro";
-        preferenciasUsuario.cambiarTema(nuevoTema);
-    });
+    new IntersectionObserver(
+      ([e]) => hdr.classList.toggle("encabezado--transparente", e.intersectionRatio === 0),
+      { threshold: [0] }
+    ).observe(sent);
+  }
 
-    btnHamburguesa.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const expandido = btnHamburguesa.getAttribute("aria-expanded") === "true";
-        btnHamburguesa.setAttribute("aria-expanded", (!expandido).toString());
-        menuSesion.classList.toggle("oculto");
-    });
+  stickyTransparente();
+  actualizarLogoYSesion();
 
-    cerrarSesion.addEventListener("click", () => {
-        Sesion.obtenerInstancia().cerrarSesion();
-        location.hash = "#/login";
-        actualizarMenuSesion();
-    });
-
-    document.addEventListener("click", (e) => {
-        if (!menuSesion.classList.contains("oculto")) {
-            const target = e.target as Node;
-            if (!btnHamburguesa.contains(target) && !menuSesion.contains(target)) {
-                menuSesion.classList.add("oculto");
-                btnHamburguesa.setAttribute("aria-expanded", "false");
-            }
-        }
-    });
-
-    function activarEncabezadoTransparenteSticky(selector: string = '.encabezado'): void {
-        const header = document.querySelector(selector);
-        if (!header) return;
-        if (header.previousElementSibling?.classList.contains('encabezado-sentinel')) return;
-        const sentinel = document.createElement('div');
-        sentinel.classList.add('encabezado-sentinel');
-        sentinel.style.position = 'absolute';
-        sentinel.style.top = '0';
-        sentinel.style.width = '1px';
-        sentinel.style.height = `${header.offsetHeight}px`;
-        sentinel.style.pointerEvents = 'none';
-        header.parentElement?.insertBefore(sentinel, header);
-
-        const observer = new window.IntersectionObserver(
-            ([entry]) => {
-                if (entry.intersectionRatio === 0) {
-                    header.classList.add('encabezado--transparente');
-                } else {
-                    header.classList.remove('encabezado--transparente');
-                }
-            },
-            { threshold: [0] }
-        );
-        observer.observe(sentinel);
+  // NUEVO: Al hacer clic en "Inicio", si ya estamos en #/, hace scroll hacia arriba
+  navLogo.addEventListener("click", (e) => {
+    const sesion = Sesion.obtenerInstancia();
+    if (sesion.estaAutenticado() && navLogo.getAttribute("href") === "#/") {
+      if (location.hash === "#/") {
+        e.preventDefault(); // evita recarga
+        window.scrollTo({ top: 0, behavior: "smooth" }); // scroll al tope
+      }
     }
-
-    activarEncabezadoTransparenteSticky();
-    window.addEventListener("hashchange", actualizarMenuSesion);
-    actualizarMenuSesion();
+  });
 }

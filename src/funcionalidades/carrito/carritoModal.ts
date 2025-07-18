@@ -1,6 +1,8 @@
 import { carritoServicio } from "../../servicios/carritoServicio";
 import { obtenerProductos } from "../../servicios/api";
 import { renderCarrito } from "../../componentes/carrito/carrito";
+import { registrarPedido } from "../../servicios/pedidoServicio"; 
+import { Sesion } from "../../funcionalidades/autenticacion/sesionSingleton"; // NUEVO
 import type { ItemCarrito } from "../../componentes/carrito/carrito";
 import type { Producto } from "../../servicios/api";
 import "../../estilos/modalCarrito.css";
@@ -30,7 +32,34 @@ function conectarBotones() {
 
   const comprarBtn = modal?.querySelector(".btn-comprar-carrito");
   if (comprarBtn) {
-    comprarBtn.addEventListener("click", () => {
+    comprarBtn.addEventListener("click", async () => {
+      // --- INICIO: Registro de pedido ---
+      const usuario = Sesion.obtenerInstancia().obtenerUsuario() || "anónimo";
+      const productos: Producto[] = await obtenerProductos();
+      const items = carritoServicio.allItems;
+      const itemsCarrito: { id: number; nombre: string; cantidad: number; precio: number }[] = Object.entries(items)
+        .map(([idStr, cantidad]) => {
+          const producto = productos.find(
+            p => String(p.id) === idStr || p.id === Number(idStr)
+          );
+          if (!producto) return null;
+          return {
+            id: producto.id,
+            nombre: producto.nombre,
+            cantidad,
+            precio: producto.precio,
+          };
+        })
+        .filter(Boolean) as any[];
+      const total = itemsCarrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+
+      registrarPedido({
+        usuario,
+        total,
+        items: itemsCarrito,
+      });
+      // --- FIN: Registro de pedido ---
+
       alert("¡Compra exitosa! 🎉 Gracias por tu pedido.");
       esconderModal();
       setTimeout(() => carritoServicio.limpiar(), 120);

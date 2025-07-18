@@ -76,7 +76,7 @@
 .form input:focus {
   border-color: #0077cc;
   outline: none;
-  background: #fafdff;
+  background: #d0e0ea;
 }
 
 .form button.btn-menu {

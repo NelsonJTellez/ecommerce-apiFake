@@ -77,3 +77,28 @@
     padding: 1rem 0.5rem;
   }
 }
+
+
+.check-eliminar-favorito {
+  accent-color: #e94f4f;
+  width: 1.22em;
+  height: 1.22em;
+}
+.btn-menu#btn-eliminar-favoritos {
+  background: #e94f4f;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.49em 1.35em;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: .36em;
+  margin-bottom: 0.085em;
+  transition: background .13s;
+  display: none;
+}
+.btn-menu#btn-eliminar-favoritos:hover {
+  background: #b80707;
+}
+
